@@ -50,7 +50,7 @@ const MyComponent = (props) => {
                 </div>
                 <img
                   className="mb-3 w-24 h-24 rounded-full shadow-lg"
-                  src="/images/profile-picture-3.jpg"
+                  src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   alt="Employee"
                 />
                 <h3 className="mb-1 text-xl font-medium text-white">

@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 const Edit = () => {
@@ -18,6 +18,22 @@ const Edit = () => {
     Sales: ["manager", "Team lead"],
     "Human Resource": ["Executive", "Trainee", "Assistant"],
   };
+
+  useEffect(() => {
+    axios({
+      method: "get",
+      url: "https://653686dbbb226bb85dd244f8.mockapi.io/employee/" + id,
+    }).then((res) => {
+      setDate(res.data.date_of_joining);
+      setName(res.data.name);
+      setEmail(res.data.email);
+      setDepartment(res.data.department);
+      setDesignation(res.data.designation);
+      setMobile(res.data.mobile);
+      setSalary(res.data.salary);
+      setStatus(res.data.status);
+    });
+  }, []);
 
   const NAVIGATE = useNavigate();
 
@@ -47,7 +63,7 @@ const Edit = () => {
   };
 
   return (
-    <div className="bg-[#212529] w-screen h-screen">
+    <div className="bg-[#212529] w-screen h-screen py-3">
       <div className="w-full lg:w-10/12 px-4 mx-auto mt-6">
         <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
           <div className="rounded-t bg-black mb-0 px-6 py-6">
@@ -212,7 +228,7 @@ const Edit = () => {
                         setDesignation(e.target.value);
                       }}
                     >
-                      {designations[department].map((item, index) => {
+                      {designations[department]?.map((item, index) => {
                         return (
                           <option value={item} key={index}>
                             {item}

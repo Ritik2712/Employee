@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background {
+    background: linear-gradient(267.18deg, #161616, #080808);
+}
+
+.modalScreen {
+    background-color: rgba(0, 0, 0, 0.263);
+}

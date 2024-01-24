@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { setUSers } from "../state/actions/UserActions";
@@ -16,7 +16,6 @@ import {
 import { RiMedalLine } from "react-icons/ri";
 
 const MyComponent = (props) => {
-  const [theme, setTheme] = useState(false);
   const NAVIGATE = useNavigate();
   const DISPATCH = useDispatch();
   const users = useSelector((state) => state.user);
@@ -28,10 +27,10 @@ const MyComponent = (props) => {
     }).then((res) => {
       DISPATCH(setUSers(res.data));
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [index, setIndex] = useState(-1);
-  console.log(theme);
   return (
     <div className="container mx-auto p-10 bg-[#212529]">
       <div className="flex flex-wrap justify-center gap-10">

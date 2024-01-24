@@ -51,7 +51,7 @@ const Navbar = () => {
                   className="py-1 hover:bg-blue-500 hover:text-white px-4"
                   onClick={() => navigateTo(result.id)}
                 >
-                  {result.name} (ID: {result.id})
+                  {result.name}
                 </div>
               ))}
             </div>

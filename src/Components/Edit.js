@@ -33,7 +33,7 @@ const Edit = () => {
       setSalary(res.data.salary);
       setStatus(res.data.status);
     });
-  }, []);
+  }, [id]);
 
   const NAVIGATE = useNavigate();
 

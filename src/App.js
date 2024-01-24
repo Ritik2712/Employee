@@ -5,6 +5,7 @@ import MyComponent from "./Components/MyComponent";
 import Create from "./Components/Create";
 import Edit from "./Components/Edit";
 import Navbar from "./Components/Navbar";
+import SearchBar from "./Components/Searchbar";
 
 // Define your components for each page
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<MyComponent />} />
         <Route path="/Create" element={<Create />} />
         <Route path="/edit/:id" element={<Edit />} />
+        <Route path="/search" element={<SearchBar />} />
       </Routes>
     </Router>
   );
